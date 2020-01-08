@@ -1,7 +1,3 @@
-## 0.9.0
-
-* Added minimum support for Flutter at version 1.30.0 and above to support TargetPlatform.macOS.
-
 ## 0.8.1
 
 * Removed TargetPlatform.macOS since pub.dev does not support it yet.
