@@ -236,7 +236,7 @@ class Upgrader {
   }
 
   String message() {
-    return messageTemplate.replaceAll('APP_NAME', appName()).replaceAll('VERSION_NEW', currentAppStoreVersion()).replaceAll('VERSION_CURRENT', currentInstalledVersion());;
+    return messageTemplate.replaceAll('APP_NAME', appName()).replaceFirst('VERSION_NEW', currentAppStoreVersion() != null ? currentAppStoreVersion() : 'null').replaceAll('VERSION_CURRENT', currentInstalledVersion() != null ? currentInstalledVersion() : 'null');
   }
 
   void checkVersion({@required BuildContext context}) {
