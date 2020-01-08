@@ -63,6 +63,9 @@ class Upgrader {
   /// Enable print statements for debugging.
   bool debugLogging = false;
 
+  /// Message template.
+  String messageTemplate = 'A new version of APP_NAME is available! Version VERSION_NEW is now available. You have VERSION_CURRENT';
+
   final notInitializedExceptionMessage =
       'initialize() not called. Must be called first.';
 
@@ -233,7 +236,7 @@ class Upgrader {
   }
 
   String message() {
-    return 'A new version of ${appName()} is available! Version ${currentAppStoreVersion()} is now available-you have ${currentInstalledVersion()}.';
+    return messageTemplate.replaceAll('APP_NAME', appName()).replaceAll('VERSION_NEW', currentAppStoreVersion()).replaceAll('VERSION_CURRENT', currentInstalledVersion());;
   }
 
   void checkVersion({@required BuildContext context}) {

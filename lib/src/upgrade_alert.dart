@@ -54,6 +54,9 @@ class _UpgradeBase extends StatefulWidget {
   /// Provide an HTTP Client that can be replaced for mock testing.
   final http.Client client;
 
+  /// Message template.
+  String messageTemplate = 'A new version of APP_NAME is available! Version VERSION_NEW is now available. You have VERSION_CURRENT';
+
   _UpgradeBase({
     Key key,
     this.appcastConfig,
@@ -70,6 +73,7 @@ class _UpgradeBase extends StatefulWidget {
     this.prompt,
     this.title,
     this.client,
+    this.messageTemplate
   }) : super(key: key) {
     if (appcastConfig != null) {
       Upgrader().appcastConfig = appcastConfig;
@@ -112,6 +116,9 @@ class _UpgradeBase extends StatefulWidget {
     }
     if (title != null) {
       Upgrader().title = title;
+    }
+    if (messageTemplate != null) {
+      Upgrader().messageTemplate = messageTemplate;
     }
   }
 
@@ -163,6 +170,7 @@ class UpgradeCard extends _UpgradeBase {
     String prompt,
     String title,
     http.Client client,
+    String messageTemplate
   }) : super(
           key: key,
           appcastConfig: appcastConfig,
@@ -179,6 +187,7 @@ class UpgradeCard extends _UpgradeBase {
           prompt: prompt,
           title: title,
           client: client,
+          messageTemplate: messageTemplate,
         );
 
   @override
@@ -266,6 +275,7 @@ class UpgradeAlert extends _UpgradeBase {
     String prompt,
     String title,
     http.Client client,
+    String messageTemplate
   }) : super(
           key: key,
           appcastConfig: appcastConfig,
@@ -282,6 +292,7 @@ class UpgradeAlert extends _UpgradeBase {
           prompt: prompt,
           title: title,
           client: client,
+          messageTemplate: messageTemplate
         );
 
   @override
