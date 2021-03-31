@@ -1,6 +1,6 @@
 name: upgrader
 description: Flutter package for prompting users to upgrade when there is a newer version of the app in the store.
-version: 0.9.0
+version: 0.10.0+1
 homepage: https://github.com/larryaasen/upgrader
 
 environment:
@@ -26,7 +26,7 @@ dependencies:
   shared_preferences: ^0.5.2
 
   # From Flutter Team: A Flutter plugin for launching a URL in the mobile platform.
-  url_launcher: ^5.0.2
+  url_launcher: ^6.0.2
 
   # A dart library for comparing and incrementing version numbers with Semantic Versioning.
   version: ^1.0.3
