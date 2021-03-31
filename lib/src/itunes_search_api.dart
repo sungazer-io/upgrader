@@ -37,7 +37,7 @@ class ITunesSearchAPI {
       print('upgrader: download: $url');
     }
 
-    final response = await client.get(url);
+    final response = await client.get(Uri.parse(url));
     if (debugEnabled) {
       if (response == null) {
         print('upgrader: response empty');
@@ -64,7 +64,7 @@ class ITunesSearchAPI {
     }
 
     final url = lookupURLById(id, country: country);
-    final response = await client.get(url);
+    final response = await client.get(Uri.parse(url));
 
     final decodedResults = _decodeResults(response.body);
     return decodedResults;

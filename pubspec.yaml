@@ -1,6 +1,6 @@
 name: upgrader
 description: Flutter package for prompting users to upgrade when there is a newer version of the app in the store.
-version: 0.8.2
+version: 0.9.0
 homepage: https://github.com/larryaasen/upgrader
 
 environment:
@@ -17,7 +17,7 @@ dependencies:
   flutter_device_locale: ^0.3.4+1
 
   # From Dart Team: A composable, Future-based library for making HTTP requests.
-  http: ^0.12.0
+  http: ^0.13.1
 
   # From Flutter Team: Provides an API for querying information about an application package.
   package_info: ^0.4.0+3
